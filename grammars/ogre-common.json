@@ -217,6 +217,10 @@
                 {
                     "match": "\\b(combinedUVW|separateUV)\\b",
                     "name": "constant.language"
+                },
+                {
+                    "match": "\\S+",
+                    "name": "string"
                 }
             ]
         },
