@@ -16,29 +16,30 @@
             "end": "($|//|{)",
             "patterns": [
                 {
-                    "match": "\\b(Point|Rotator|Scaler|ColourImage)\\b",
-                    "name": "variable.parameter.function"
+                    "match": "\\b(Point|Box|Rotator|Scaler|ColourImage|ColourFader|LinearForce|DeflectorPlane|DirectionRandomiser)\\b",
+                    "name": "storage.type"
                 }
             ]
         },
         {
-            "match": "\\b(particle_width|particle_height|sorted|cull_each|quota|billboard_type|rate|emission_rate|angle|position|direction|time_to_live|velocity_min|velocity_max)\\b",
+            "match": "\\b(colour|particle_width|particle_height|sorted|cull_each|quota|billboard_type|rate|emission_rate|angle|position|direction|renderer|local_space)\\b",
             "name": "entity.name.function",
-            "comment": "Particle System"
+            "comment": "general properties"
         },
         {
-            "match": "\\b(emission_rate|angle|position|direction|time_to_live|velocity_min|velocity_max)\\b",
+            "match": "\\b(red|green|blue|alpha|width|height|depth)\\b",
             "name": "entity.name.function",
-            "comment": "Point emmitter"
+            "comment": "Dimensions"
         },
         {
-            "match": "\\b(rotation_range_start|rotation_range_end|rotation_speed_range_start|rotation_speed_range_end)\\b",
+            "match": "\\b((time_to_live|duration|velocity|repeat_delay)(_min|_max)?)\\b",
             "name": "entity.name.function",
-            "comment": "Rotator affector"
+            "comment": "min/ max properties"
         },
         {
-            "match": "\\b(true|false|TRUE|FALSE|yes|no|YES|NO)\\b",
-            "name": "constant.language.c"
+            "match": "\\b((rotation_range|rotation_speed_range|colour_range)(_start|_end))\\b",
+            "name": "entity.name.function",
+            "comment": "range properties"
         },
         {
             "include": "source.ogre.script"

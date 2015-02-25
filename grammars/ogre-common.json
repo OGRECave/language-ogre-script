@@ -33,7 +33,7 @@
             "patterns": [
                 {
                     "match": "\\b(colour|depth|stencil)\\b",
-                    "name": "storage.type"
+                    "name": "constant.language"
                 }
             ]
         },
@@ -49,7 +49,7 @@
             "patterns": [
                 {
                     "match": "\\b(Distance|PixelCount|lod_values)\\b",
-                    "name": "storage.type"
+                    "name": "constant.language"
                 },
                 {
                     "include": "#numeric"
@@ -68,7 +68,7 @@
             "patterns": [
                 {
                     "match": "\\b(always_fail|always_pass|less|less_equal|not_equal|greater_equal|greater)\\b",
-                    "name": "storage.type"
+                    "name": "constant.language"
                 }
             ]
         },
@@ -84,7 +84,7 @@
             "patterns": [
                 {
                     "match": "\\b(keep|zero|replace|increment|decrement|increment_wrap|decrement_wrap|invert)\\b",
-                    "name": "storage.type"
+                    "name": "constant.language"
                 }
             ]
         },
@@ -100,7 +100,7 @@
             "patterns": [
                 {
                     "match": "\\b(include|exclude)\\b",
-                    "name": "storage.type"
+                    "name": "constant.language"
                 }
             ]
         },
@@ -116,11 +116,11 @@
             "patterns": [
                 {
                     "match": "\\b(add|modulate|alpha_blend|colour_blend)\\b",
-                    "name": "storage.type"
+                    "name": "constant.language"
                 },
                 {
                     "match": "\\b(one|zero|dest_colour|src_colour|one_minus_dest_colour|one_minus_src_colour|dest_alpha|src_alpha|one_minus_dest_alpha|one_minus_src_alpha)\\b",
-                    "name": "constant.numeric"
+                    "name": "constant.language"
                 }
             ]
         },
@@ -136,7 +136,7 @@
             "patterns": [
                 {
                     "match": "\\b(add|subtract|reverse_subtract|min|max)\\b",
-                    "name": "storage.type"
+                    "name": "constant.language"
                 }
             ]
         },
@@ -152,7 +152,7 @@
             "patterns": [
                 {
                     "match": "\\b(clockwise|anticlockwise|none|back|front|none)\\b",
-                    "name": "storage.type"
+                    "name": "constant.language"
                 }
             ]
         },
@@ -168,7 +168,7 @@
             "patterns": [
                 {
                     "match": "\\b(flat|gouraud|phong)\\b",
-                    "name": "storage.type"
+                    "name": "constant.language"
                 }
             ]
         },
@@ -184,7 +184,7 @@
             "patterns": [
                 {
                     "match": "\\b(solid|wireframe|points)\\b",
-                    "name": "storage.type"
+                    "name": "constant.language"
                 }
             ]
         },
@@ -200,7 +200,7 @@
             "patterns": [
                 {
                     "match": "\\b(off|spherical|planar|cubic_reflection|cubic_normal)\\b",
-                    "name": "storage.type"
+                    "name": "constant.language"
                 }
             ]
         },
@@ -216,7 +216,7 @@
             "patterns": [
                 {
                     "match": "\\b(combinedUVW|separateUV)\\b",
-                    "name": "storage.type"
+                    "name": "constant.language"
                 }
             ]
         },
@@ -232,7 +232,7 @@
             "patterns": [
                 {
                     "match": "\\b(vertex|fragment)\\b",
-                    "name": "storage.type"
+                    "name": "constant.language"
                 }
             ]
         },
@@ -248,7 +248,7 @@
             "patterns": [
                 {
                     "match": "\\b(wrap|clamp|mirror|border)\\b",
-                    "name": "storage.type"
+                    "name": "constant.language"
                 }
             ]
         },
@@ -264,7 +264,7 @@
             "patterns": [
                 {
                     "match": "\\b(none|bilinear|trilinear|anisotropic)\\b",
-                    "name": "storage.type"
+                    "name": "constant.language"
                 }
             ]
         },
@@ -280,7 +280,7 @@
             "patterns": [
                 {
                     "match": "\\b(replace|blend_diffuse_alpha|blend_texture_alpha|blend_current_alpha|blend_manual|dotproduct|blend_diffuse_colour|src_current|src_texture|src_diffuse|src_specular|src_manual|add|add_signed|add_smooth|subtract|modulate|modulate_x2|modulate_x4|alpha_blend|source1|source2|)\\b",
-                    "name": "storage.type"
+                    "name": "constant.language"
                 },
                 {
                     "include": "#numeric"
@@ -318,7 +318,7 @@
             "patterns": [
                 {
                     "match": "\\b(scroll_x|scroll_y|rotate|scale_x|scale_y|sine|triangle|square|sawtooth|inverse_sawtooth|)\\b",
-                    "name": "storage.type"
+                    "name": "constant.language"
                 },
                 {
                     "include": "#numeric"
@@ -337,7 +337,7 @@
             "patterns": [
                 {
                     "match": "\\b(named|compositor|shadow)\\b",
-                    "name": "storage.type"
+                    "name": "constant.language"
                 },
                 {
                     "include": "#numeric"
@@ -356,7 +356,7 @@
             "patterns": [
                 {
                     "match": "\\b(always_fail|always_pass|less|less_equal|equal|not_equal|greater_equal|greater)\\b",
-                    "name": "storage.type"
+                    "name": "constant.language"
                 },
                 {
                     "include": "#numeric"
@@ -375,7 +375,7 @@
             "patterns": [
                 {
                     "match": "\\b(none|default)\\b",
-                    "name": "storage.type"
+                    "name": "constant.language"
                 },
                 {
                     "match": "\\b([0-3])\\b",
@@ -395,7 +395,7 @@
             "patterns": [
                 {
                     "match": "\\b(point_list|line_list|line_strip|triangle_list|triangle_strip|triangle_fan)\\b",
-                    "name": "storage.type"
+                    "name": "constant.language"
                 },
                 {
                     "include": "#numeric"
@@ -413,8 +413,11 @@
             "end": "($|//)",
             "patterns": [
                 {
-                    "match": "\\b(true|false|none|linear|exp|exp2)\\b",
-                    "name": "storage.type"
+                    "match": "\\b(none|linear|exp|exp2)\\b",
+                    "name": "constant.language"
+                },
+                {
+                    "include": "#boolean"
                 },
                 {
                     "include": "#numeric"
@@ -433,7 +436,7 @@
             "patterns": [
                 {
                     "match": "\\b(once_per_light|once|point|directional|spot|per_light|per_n_lights)\\b",
-                    "name": "storage.type"
+                    "name": "constant.language"
                 },
                 {
                     "include": "#numeric"
@@ -461,8 +464,7 @@
             "end": "($|//)",
             "patterns": [
                 {
-                    "match": "\\b(on|off)\\b",
-                    "name": "storage.type"
+                    "include": "#boolean"
                 }
             ]
         },
@@ -477,8 +479,7 @@
             "end": "($|//)",
             "patterns": [
                 {
-                    "match": "\\b(true|false)\\b",
-                    "name": "storage.type"
+                    "include": "#boolean"
                 }
             ]
         },
@@ -514,9 +515,12 @@
             "include": "#numeric"
         },
         {
+            "include": "#boolean"
+        },
+        {
+            "comment": "Ogre Variable. Taken from PHP",
             "match": "(?x)\n        \t\t\t            (\\$+)[a-zA-Z_\\x{7f}-\\x{ff}]\n        \t\t\t            [a-zA-Z0-9_\\x{7f}-\\x{ff}]*?\\b",
-            "name": "variable.other",
-            "comment": "Ogre Variable. Taken from PHP"
+            "name": "variable.other"
         }
     ],
     "repository": {
@@ -525,6 +529,14 @@
                 {
                     "match": "\\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)(L|l|UL|ul|u|U|F|f|ll|LL|ull|ULL)?\\b",
                     "name": "constant.numeric.c"
+                }
+            ]
+        },
+        "boolean": {
+            "patterns": [
+                {
+                    "match": "\\b(true|false|TRUE|FALSE|yes|no|YES|NO|on|off|ON|OFF)\\b",
+                    "name": "constant.language.c"
                 }
             ]
         },
