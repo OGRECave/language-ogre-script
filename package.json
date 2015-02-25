@@ -2,7 +2,7 @@
   "name": "language-ogre-script",
   "version": "0.1.0",
   "description": "Syntax highlighting for Ogre Scripts for Atom",
-  "repository": "https://github.com/atom-language-ogre-script",
+  "repository": "https://github.com/paroj/language-ogre-script",
   "license": "MIT",
   "engines": {
     "atom": ">=0.174.0 <2.0.0"
