@@ -5,10 +5,10 @@ Syntax highlighting for [Ogre Scripts](http://www.ogre3d.org/docs/manual/manual_
 Based on the [Sublime Plugin](https://github.com/TheSHEEEP/ST-OgreScripts). Extended for particle scripts.
 
 **Ogre1 Materials**
-![](preview1.png)
+![](https://raw.githubusercontent.com/paroj/language-ogre-script/master/preview1.png)
 
 **Ogre2 Materials**
-![](preview2.png)
+![](https://raw.githubusercontent.com/paroj/language-ogre-script/master/preview2.png)
 
 ## Structure
 * ogre-common: grammar present in all ogre script files
