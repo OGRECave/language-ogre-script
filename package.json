@@ -1,6 +1,6 @@
 {
   "name": "language-ogre-script",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Syntax highlighting for Ogre Scripts for Atom",
   "repository": "https://github.com/paroj/language-ogre-script",
   "license": "MIT",
