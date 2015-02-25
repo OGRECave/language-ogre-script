@@ -1,0 +1,72 @@
+{
+    "fileTypes": [
+        "compositor"
+    ],
+    "name": "Ogre Compositor Script",
+    "scopeName": "source.ogre.compositor",
+    "patterns": [
+        {
+            "begin": "\\b(compositor_node|workspace|compositor|technique|target|target_output|pass|clear|texture_unit|default_params|shared_params)\\b",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.tag"
+                }
+            },
+            "comment": "Top Level Tag Names",
+            "end": "($|//|{)",
+            "patterns": [
+                {
+                    "match": "\\b(render_scene|render_quad|clear|stencil|render_custom)\\b",
+                    "name": "variable.parameter.function"
+                }
+            ]
+        },
+        {
+            "begin": "\\b(texture)\\b",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function"
+                }
+            },
+            "comment": "Texture Creation",
+            "end": "($|//)",
+            "patterns": [
+                {
+                    "match": "\\b(pooled|target_width|target_height|target_width_scaled|target_height_scaled|gamma|no_fsaa|depth_pool|local_scope|chain_scope|global_scope|1d|2d|3d|cubic|alpha)\\b",
+                    "name": "storage.type"
+                },
+                {
+                    "match": "\\b(PF_L8|PF_L16|PF_A8|PF_A4L4|PF_BYTE_LA|PF_R5G6B5|PF_B5G6R5|PF_R3G3B2|PF_A4R4G4B4|PF_A1R5G5B5|PF_R8G8B8|PF_B8G8R8|PF_A8R8G8B8|PF_A8B8G8R8|PF_B8G8R8A8|PF_R8G8B8A8|PF_X8R8G8B8|PF_X8B8G8R8|PF_A2R10G10B10|PF_A2B10G10R10|PF_FLOAT16_R|PF_FLOAT16_RGB|PF_FLOAT16_RGBA|PF_FLOAT32_R|PF_FLOAT32_RGB|PF_FLOAT32_RGBA|PF_SHORT_RGBA|PF_FLOAT16_GR|PF_FLOAT32_GR|PF_DEPTH|PF_SHORT_GR|PF_SHORT_RGB|PF_PVRTC_RGB2|PF_PVRTC_RGBA2|PF_PVRTC_RGB4|PF_PVRTC_RGBA4|PF_R8|PF_RG8|PF_A8R8G8B8|PF_R8G8B8A8|PF_R8G8B8|PF_FLOAT16_RGBA|PF_FLOAT16_RGB|PF_FLOAT16_R|PF_FLOAT32_RGBA|PF_FLOAT32_RGB|PF_FLOAT32_R)\\b",
+                    "name": "constant.numeric"
+                },
+                {
+                    "match": "\\b([0-9]+\\.*[0-9]*)\\b",
+                    "name": "constant.numeric"
+                }
+            ]
+        },
+        {
+            "begin": "\\b(input)\\b",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function"
+                }
+            },
+            "comment": "Input Directive",
+            "end": "($|//)",
+            "patterns": [
+                {
+                    "match": "\\b(none|previous)\\b",
+                    "name": "storage.type"
+                },
+                {
+                    "match": "\\b([0-9]+\\.*[0-9]*)\\b",
+                    "name": "constant.numeric"
+                }
+            ]
+        },
+        {
+            "include": "source.ogre.script"
+        }
+    ]
+}

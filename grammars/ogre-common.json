@@ -1,0 +1,600 @@
+{
+    "scopeName": "source.ogre.script",
+    "patterns": [
+        {
+            "begin": "\\b(texture_ref)\\b",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function"
+                }
+            },
+            "comment": "Texture Reference",
+            "end": "($|//)"
+        },
+        {
+            "begin": "\\b(set_texture_alias)\\b",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function"
+                }
+            },
+            "comment": "Texture Alias for materials",
+            "end": "($|//)"
+        },
+        {
+            "begin": "\\b(buffers)\\b",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function"
+                }
+            },
+            "comment": "Buffers Directive for clear pass",
+            "end": "($|//)",
+            "patterns": [
+                {
+                    "match": "\\b(colour|depth|stencil)\\b",
+                    "name": "storage.type"
+                }
+            ]
+        },
+        {
+            "begin": "\\b(lod_strategy)\\b",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function"
+                }
+            },
+            "comment": "Lod strategy in materials",
+            "end": "($|//)",
+            "patterns": [
+                {
+                    "match": "\\b(Distance|PixelCount|lod_values)\\b",
+                    "name": "storage.type"
+                },
+                {
+                    "include": "#numeric"
+                }
+            ]
+        },
+        {
+            "begin": "\\b(comp_func)\\b",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function"
+                }
+            },
+            "comment": "Comp func for stencil pass",
+            "end": "($|//)",
+            "patterns": [
+                {
+                    "match": "\\b(always_fail|always_pass|less|less_equal|not_equal|greater_equal|greater)\\b",
+                    "name": "storage.type"
+                }
+            ]
+        },
+        {
+            "begin": "\\b(fail_op|depth_fail_op|pass_op)\\b",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function"
+                }
+            },
+            "comment": "Operations for stencil pass",
+            "end": "($|//)",
+            "patterns": [
+                {
+                    "match": "\\b(keep|zero|replace|increment|decrement|increment_wrap|decrement_wrap|invert)\\b",
+                    "name": "storage.type"
+                }
+            ]
+        },
+        {
+            "begin": "\\b(gpu_vendor_rule)\\b",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function"
+                }
+            },
+            "comment": "GPU vendor rules",
+            "end": "($|//)",
+            "patterns": [
+                {
+                    "match": "\\b(include|exclude)\\b",
+                    "name": "storage.type"
+                }
+            ]
+        },
+        {
+            "begin": "\\b(scene_blend|separate_scene_blend|colour_op_multipass_fallback)\\b",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function"
+                }
+            },
+            "comment": "Scene blend rules for materials",
+            "end": "($|//)",
+            "patterns": [
+                {
+                    "match": "\\b(add|modulate|alpha_blend|colour_blend)\\b",
+                    "name": "storage.type"
+                },
+                {
+                    "match": "\\b(one|zero|dest_colour|src_colour|one_minus_dest_colour|one_minus_src_colour|dest_alpha|src_alpha|one_minus_dest_alpha|one_minus_src_alpha)\\b",
+                    "name": "constant.numeric"
+                }
+            ]
+        },
+        {
+            "begin": "\\b(scene_blend_op|separate_scene_blend_op)\\b",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function"
+                }
+            },
+            "comment": "Scene blend operations for materials",
+            "end": "($|//)",
+            "patterns": [
+                {
+                    "match": "\\b(add|subtract|reverse_subtract|min|max)\\b",
+                    "name": "storage.type"
+                }
+            ]
+        },
+        {
+            "begin": "\\b(cull_hardware|cull_software)\\b",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function"
+                }
+            },
+            "comment": "Culling operations for materials",
+            "end": "($|//)",
+            "patterns": [
+                {
+                    "match": "\\b(clockwise|anticlockwise|none|back|front|none)\\b",
+                    "name": "storage.type"
+                }
+            ]
+        },
+        {
+            "begin": "\\b(shading)\\b",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function"
+                }
+            },
+            "comment": "Shading operations for materials",
+            "end": "($|//)",
+            "patterns": [
+                {
+                    "match": "\\b(flat|gouraud|phong)\\b",
+                    "name": "storage.type"
+                }
+            ]
+        },
+        {
+            "begin": "\\b(polygon_mode)\\b",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function"
+                }
+            },
+            "comment": "Polygon modes for materials",
+            "end": "($|//)",
+            "patterns": [
+                {
+                    "match": "\\b(solid|wireframe|points)\\b",
+                    "name": "storage.type"
+                }
+            ]
+        },
+        {
+            "begin": "\\b(env_map)\\b",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function"
+                }
+            },
+            "comment": "Texture unit environment map",
+            "end": "($|//)",
+            "patterns": [
+                {
+                    "match": "\\b(off|spherical|planar|cubic_reflection|cubic_normal)\\b",
+                    "name": "storage.type"
+                }
+            ]
+        },
+        {
+            "begin": "\\b(cubic_texture)\\b",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function"
+                }
+            },
+            "comment": "Cubic texture format",
+            "end": "($|//)",
+            "patterns": [
+                {
+                    "match": "\\b(combinedUVW|separateUV)\\b",
+                    "name": "storage.type"
+                }
+            ]
+        },
+        {
+            "begin": "\\b(binding_type)\\b",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function"
+                }
+            },
+            "comment": "Texture binding type",
+            "end": "($|//)",
+            "patterns": [
+                {
+                    "match": "\\b(vertex|fragment)\\b",
+                    "name": "storage.type"
+                }
+            ]
+        },
+        {
+            "begin": "\\b(tex_address_mode)\\b",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function"
+                }
+            },
+            "comment": "Texture address mode",
+            "end": "($|//)",
+            "patterns": [
+                {
+                    "match": "\\b(wrap|clamp|mirror|border)\\b",
+                    "name": "storage.type"
+                }
+            ]
+        },
+        {
+            "begin": "\\b(filtering)\\b",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function"
+                }
+            },
+            "comment": "Texture filtering mode",
+            "end": "($|//)",
+            "patterns": [
+                {
+                    "match": "\\b(none|bilinear|trilinear|anisotropic)\\b",
+                    "name": "storage.type"
+                }
+            ]
+        },
+        {
+            "begin": "\\b(colour_op|colour_op_ex|alpha_op_ex)\\b",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function"
+                }
+            },
+            "comment": "Texture unit colour/alpha operations",
+            "end": "($|//)",
+            "patterns": [
+                {
+                    "match": "\\b(replace|blend_diffuse_alpha|blend_texture_alpha|blend_current_alpha|blend_manual|dotproduct|blend_diffuse_colour|src_current|src_texture|src_diffuse|src_specular|src_manual|add|add_signed|add_smooth|subtract|modulate|modulate_x2|modulate_x4|alpha_blend|source1|source2|)\\b",
+                    "name": "storage.type"
+                },
+                {
+                    "include": "#numeric"
+                }
+            ]
+        },
+        {
+            "begin": "\\b(param_indexed|param_indexed_auto|param_named|param_named_auto)\\b",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function"
+                }
+            },
+            "comment": "Vertex and fragment program indexed/named/auto parameters",
+            "end": "($|//)",
+            "patterns": [
+                {
+                    "match": "\\b(float[0-9]*|int[0-9]*|matrix[0-9]x[0-9]|world_matrix|inverse_world_matrix|transpose_world_matrix|inverse_transpose_world_matrix|world_matrix_array_3x4|view_matrix|inverse_view_matrix|transpose_view_matrix|inverse_transpose_view_matrix|projection_matrix|inverse_projection_matrix|transpose_projection_matrix|inverse_transpose_projection_matrix|worldview_matrix|inverse_worldview_matrix|transpose_worldview_matrix|inverse_transpose_worldview_matrix|viewproj_matrix|inverse_viewproj_matrix|transpose_viewproj_matrix|inverse_transpose_viewproj_matrix|worldviewproj_matrix|inverse_worldviewproj_matrix|transpose_worldviewproj_matrix|inverse_transpose_worldviewproj_matrix|texture_matrix|render_target_flipping|light_diffuse_colour|light_specular_colour|light_attenuation|spotlight_params|light_position|light_direction|light_position_object_space|light_direction_object_space|light_distance_object_space|light_position_view_space|light_direction_view_space|light_power|light_diffuse_colour_power_scaled|light_specular_colour_power_scaled|light_number|light_diffuse_colour_array|light_specular_colour_array|light_diffuse_colour_power_scaled_array|light_specular_colour_power_scaled_array|light_attenuation_array|spotlight_params_array|light_position_array|light_direction_array|light_position_object_space_array|light_direction_object_space_array|light_distance_object_space_array|light_position_view_space_array|light_direction_view_space_array|light_power_array|light_count|light_casts_shadows|ambient_light_colour|surface_ambient_colour|surface_diffuse_colour|surface_specular_colour|surface_emissive_colour|surface_shininess|derived_ambient_light_colour|derived_scene_colour|derived_light_diffuse_colour|derived_light_specular_colour|derived_light_diffuse_colour_array|derived_light_specular_colour_array|fog_colour|fog_params|camera_position|camera_position_object_space|lod_camera_position|lod_camera_position_object_space|time_0_x|costime_0_x|sintime_0_x|tantime_0_x|time_0_x_packed|time_0_1|costime_0_1|sintime_0_1|tantime_0_1|time_0_1_packed|time_0_2pi|costime_0_2pi|sintime_0_2pi|tantime_0_2pi|time_0_2pi_packed|frame_time|fps|viewport_width|viewport_height|inverse_viewport_width|inverse_viewport_height|viewport_size|texel_offsets|view_direction|view_side_vector|view_up_vector|fov|near_clip_distance|far_clip_distance|texture_viewproj_matrix|texture_viewproj_matrix_array|texture_worldviewproj_matrix|texture_worldviewproj_matrix_array|spotlight_viewproj_matrix|spotlight_worldviewproj_matrix|scene_depth_range|shadow_scene_depth_range|shadow_colour|shadow_extrusion_distance|texture_size|inverse_texture_size|packed_texture_size|pass_number|pass_iteration_number|animation_parametric|custom)\\b",
+                    "name": "storage.type"
+                },
+                {
+                    "include": "#numeric"
+                }
+            ]
+        },
+        {
+            "begin": "\\b(wave_xform)\\b",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function"
+                }
+            },
+            "comment": "Texture unit wave_xform animation",
+            "end": "($|//)",
+            "patterns": [
+                {
+                    "match": "\\b(scroll_x|scroll_y|rotate|scale_x|scale_y|sine|triangle|square|sawtooth|inverse_sawtooth|)\\b",
+                    "name": "storage.type"
+                },
+                {
+                    "include": "#numeric"
+                }
+            ]
+        },
+        {
+            "begin": "\\b(content_type)\\b",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function"
+                }
+            },
+            "comment": "texture content type",
+            "end": "($|//)",
+            "patterns": [
+                {
+                    "match": "\\b(named|compositor|shadow)\\b",
+                    "name": "storage.type"
+                },
+                {
+                    "include": "#numeric"
+                }
+            ]
+        },
+        {
+            "begin": "\\b(depth_func|alpha_rejection)\\b",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function"
+                }
+            },
+            "comment": "Depth/alpha functions for materials",
+            "end": "($|//)",
+            "patterns": [
+                {
+                    "match": "\\b(always_fail|always_pass|less|less_equal|equal|not_equal|greater_equal|greater)\\b",
+                    "name": "storage.type"
+                },
+                {
+                    "include": "#numeric"
+                }
+            ]
+        },
+        {
+            "begin": "\\b(optimisation_level)\\b",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function"
+                }
+            },
+            "comment": "HLSL optimization level",
+            "end": "($|//)",
+            "patterns": [
+                {
+                    "match": "\\b(none|default)\\b",
+                    "name": "storage.type"
+                },
+                {
+                    "match": "\\b([0-3])\\b",
+                    "name": "constant.numeric"
+                }
+            ]
+        },
+        {
+            "begin": "\\b(input_operation_type|output_operation_type|max_output_vertices)\\b",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function"
+                }
+            },
+            "comment": "GLSL geometry shader defines",
+            "end": "($|//)",
+            "patterns": [
+                {
+                    "match": "\\b(point_list|line_list|line_strip|triangle_list|triangle_strip|triangle_fan)\\b",
+                    "name": "storage.type"
+                },
+                {
+                    "include": "#numeric"
+                }
+            ]
+        },
+        {
+            "begin": "\\b(fog_override)\\b",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function"
+                }
+            },
+            "comment": "Fog overrides for materials",
+            "end": "($|//)",
+            "patterns": [
+                {
+                    "match": "\\b(true|false|none|linear|exp|exp2)\\b",
+                    "name": "storage.type"
+                },
+                {
+                    "include": "#numeric"
+                }
+            ]
+        },
+        {
+            "begin": "\\b(iteration)\\b",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function"
+                }
+            },
+            "comment": "Iteration for material passes",
+            "end": "($|//)",
+            "patterns": [
+                {
+                    "match": "\\b(once_per_light|once|point|directional|spot|per_light|per_n_lights)\\b",
+                    "name": "storage.type"
+                },
+                {
+                    "include": "#numeric"
+                }
+            ]
+        },
+        {
+            "begin": "\\b(manual_named_constants)\\b",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function"
+                }
+            },
+            "comment": "Keyword with nothing special after them",
+            "end": "($|//)"
+        },
+        {
+            "begin": "\\b(depth_check|depth_write|alpha_to_coverage|light_scissor|light_clip_planes|illumination_stage|only_initial|shadows|check|two_sided|point_sprites|point_size_attenuation|receive_shadows|colour_write|normalise_normals|lighting|transparent_sorting|transparency_casts_shadows)\\b",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function"
+                }
+            },
+            "comment": "Keyword On/Off",
+            "end": "($|//)",
+            "patterns": [
+                {
+                    "match": "\\b(on|off)\\b",
+                    "name": "storage.type"
+                }
+            ]
+        },
+        {
+            "begin": "\\b(polygon_mode_overrideable|includes_skeletal_animation|includes_morph_animation|uses_vertex_texture_fetch|uses_adjacency_information|column_major_matrices)\\b",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function"
+                }
+            },
+            "comment": "Keyword true/false",
+            "end": "($|//)",
+            "patterns": [
+                {
+                    "match": "\\b(true|false)\\b",
+                    "name": "storage.type"
+                }
+            ]
+        },
+        {
+            "begin": "\\b(material_scheme|texture_alias|shadow_caster_material|shadow_receiver_material|scheme|material|compositor_logic|delegate|attach|shared_params_ref|shadow_caster_vertex_program_ref|shadow_receiver_vertex_program_ref)\\b",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function"
+                }
+            },
+            "comment": "Keywords followed by names",
+            "end": "($|//)"
+        },
+        {
+            "begin": "\\b(source|entry_point|texture|image)\\b",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function"
+                }
+            },
+            "comment": "Keywords followed by strings",
+            "end": "($|//)",
+            "name": "string"
+        },
+        {
+            "match": "\\b(lod_index|point_size|depth_bias|iteration_depth_bias|first_render_queue|last_render_queue|visibility_mask|anim_texture|point_size_min|point_size_max|lod_bias|identifier|start_light|max_lights|colour_value|depth_value|stencil_value|ref_value|mask|tex_coord_set|tex_border_colour|max_anisotropy|mipmap_bias|scroll|scroll_anim|rotate|rotate_anim|scale|transform|preprocessor_defines|includes_pose_animation)\\b",
+            "name": "entity.name.function"
+        },
+        {
+            "include": "#comments"
+        },
+        {
+            "include": "#numeric"
+        },
+        {
+            "match": "(?x)\n        \t\t\t            (\\$+)[a-zA-Z_\\x{7f}-\\x{ff}]\n        \t\t\t            [a-zA-Z0-9_\\x{7f}-\\x{ff}]*?\\b",
+            "name": "variable.other",
+            "comment": "Ogre Variable. Taken from PHP"
+        }
+    ],
+    "repository": {
+        "numeric": {
+            "patterns": [
+                {
+                    "match": "\\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)(L|l|UL|ul|u|U|F|f|ll|LL|ull|ULL)?\\b",
+                    "name": "constant.numeric.c"
+                }
+            ]
+        },
+        "comments": {
+            "patterns": [
+                {
+                    "captures": {
+                        "1": {
+                            "name": "meta.toc-list.banner.block.c"
+                        }
+                    },
+                    "match": "^/\\* =(\\s*.*?)\\s*= \\*/$\\n?",
+                    "name": "comment.block.c"
+                },
+                {
+                    "begin": "/\\*",
+                    "beginCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.comment.begin.c"
+                        }
+                    },
+                    "end": "\\*/",
+                    "endCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.comment.end.c"
+                        }
+                    },
+                    "name": "comment.block.c"
+                },
+                {
+                    "match": "\\*/.*\\n",
+                    "name": "invalid.illegal.stray-comment-end.c"
+                },
+                {
+                    "captures": {
+                        "1": {
+                            "name": "meta.toc-list.banner.line.c"
+                        }
+                    },
+                    "match": "^// =(\\s*.*?)\\s*=\\s*$\\n?",
+                    "name": "comment.line.banner.c++"
+                },
+                {
+                    "begin": "(^[ \\t]+)?(?=//)",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "punctuation.whitespace.comment.leading.c++"
+                        }
+                    },
+                    "end": "(?!\\G)",
+                    "patterns": [
+                        {
+                            "begin": "//",
+                            "beginCaptures": {
+                                "0": {
+                                    "name": "punctuation.definition.comment.c++"
+                                }
+                            },
+                            "end": "\\n",
+                            "name": "comment.line.double-slash.c++",
+                            "patterns": [
+                                {
+                                    "match": "(?>\\\\\\s*\\n)",
+                                    "name": "punctuation.separator.continuation.c++"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

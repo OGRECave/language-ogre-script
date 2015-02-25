@@ -1,0 +1,47 @@
+{
+    "fileTypes": [
+        "particle"
+    ],
+    "name": "Ogre Particle Script",
+    "scopeName": "source.ogre.particle",
+    "patterns": [
+        {
+            "begin": "\\b(particle_system|emitter|affector|target_output|pass|clear|texture_unit|vertex_program|fragment_program|vertex_program_ref|fragment_program_ref|default_params|shared_params)\\b",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.tag"
+                }
+            },
+            "comment": "Top Level Tag Names",
+            "end": "($|//|{)",
+            "patterns": [
+                {
+                    "match": "\\b(Point|Rotator|Scaler|ColourImage)\\b",
+                    "name": "variable.parameter.function"
+                }
+            ]
+        },
+        {
+            "match": "\\b(particle_width|particle_height|sorted|cull_each|quota|billboard_type|rate|emission_rate|angle|position|direction|time_to_live|velocity_min|velocity_max)\\b",
+            "name": "entity.name.function",
+            "comment": "Particle System"
+        },
+        {
+            "match": "\\b(emission_rate|angle|position|direction|time_to_live|velocity_min|velocity_max)\\b",
+            "name": "entity.name.function",
+            "comment": "Point emmitter"
+        },
+        {
+            "match": "\\b(rotation_range_start|rotation_range_end|rotation_speed_range_start|rotation_speed_range_end)\\b",
+            "name": "entity.name.function",
+            "comment": "Rotator affector"
+        },
+        {
+            "match": "\\b(true|false|TRUE|FALSE|yes|no|YES|NO)\\b",
+            "name": "constant.language.c"
+        },
+        {
+            "include": "source.ogre.script"
+        }
+    ]
+}
