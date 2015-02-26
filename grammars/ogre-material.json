@@ -8,7 +8,7 @@
     "patterns": [
         {
             "comment": "Top Level Tag Names",
-            "begin": "\\b(hlms|material|technique|pass|clear|texture_unit|(geometry_program|vertex_program|fragment_program|tessellation_hull_program|tessellation_domain_program)(_ref)?|default_params|shared_params)\\b",
+            "begin": "\\b(hlms|material|technique|pass|clear|texture_unit|(geometry|vertex|fragment|compute|tessellation_hull|tessellation_domain)_program(_ref)?|default_params|shared_params)\\b",
             "beginCaptures": {
                 "1": {
                     "name": "entity.name.tag"
@@ -63,6 +63,11 @@
             "match": "\\b(syntax|profiles|target)\\b",
             "name": "entity.name.function",
             "comment": "Program syntaxes. Could also detect the specific tokens here"
+        },
+        {
+            "match": "\\b(compute_group_dimensions)\\b",
+            "name": "entity.name.function",
+            "comment": "general properties"
         },
         {
             "comment": "v2.1: Detail Blend Mode",
