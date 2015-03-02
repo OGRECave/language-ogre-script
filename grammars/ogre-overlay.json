@@ -1,0 +1,42 @@
+{
+    "fileTypes": [
+        "overlay"
+    ],
+    "name": "Ogre Overlay Script",
+    "scopeName": "source.ogre.compositor",
+    "patterns": [
+        {
+            "begin": "\\b((template )?(element|container))\\b",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.tag"
+                }
+            },
+            "comment": "Top Level Tag Names",
+            "end": "($|//|{)",
+            "patterns": [
+                {
+                    "match": "\\b(Panel|BorderPanel|TextArea)\\b",
+                    "name": "storage.type"
+                }
+            ]
+        },
+        {
+            "match11": "\\b(Panel|BorderPanel|TextArea)\\b",
+            "name": "storage.type",
+            "comment": "storage type without tags"
+        },
+        {
+            "match": "\\b(caption|font_name|alignment|char_height|space_width|colour|width|height|metrics_mode|uv_coords|horz_align|vert_align|top|left|transparent|border_(material|size|top_uv|topright_uv|topleft_uv|left_uv|right_uv|bottomleft_uv|bottom_uv|bottomright_uv)|connect_output|execution_mask|overlays|rq_(first|last)|viewport_modifier_mask|num_splits|pssm_lambda)\\b",
+            "name": "entity.name.function",
+            "comment": "general properties"
+        },
+        {
+            "match": "\\b(pixels|center|right|left|bottom|top)\\b",
+            "name": "constant.language"
+        },
+        {
+            "include": "source.ogre.script"
+        }
+        ]
+}
