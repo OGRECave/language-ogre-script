@@ -15,9 +15,9 @@ Based on the [Sublime Plugin](https://github.com/TheSHEEEP/ST-OgreScripts). Exte
   * ogre-material: material specific grammar
   * ogre-particle: particle specific grammar
   * ogre-compositor: compositor specific grammar
+  * ogre-overlay: overlay specific grammar
 
 ## TODO
 * refactor the plugin to work on tokens. Currently it tries to verify property values, which causes code duplication and does not cope with variables (`$foo`)
-* overlay scripts
 * font definition scripts
 * split more of ogre-common into script specific files to reduce false positives
