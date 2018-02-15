@@ -1,13 +1,13 @@
-# Ogre Scripts support in Atom
+# Ogre Scripts support
 
-Syntax highlighting for [Ogre Scripts](http://www.ogre3d.org/docs/manual/manual_13.html#Scripts).
+Syntax highlighting for [Ogre Scripts](https://ogrecave.github.io/ogre/api/1.10/Scripts.html) in Atom and VSCode.
 
 Based on the [Sublime Plugin](https://github.com/TheSHEEEP/ST-OgreScripts). Extended for particle scripts.
 
-**Ogre1 Materials**
+**Ogre1 Materials**  
 ![](https://raw.githubusercontent.com/paroj/language-ogre-script/master/preview1.png)
 
-**Ogre2 Materials**
+**Ogre2 Materials**  
 ![](https://raw.githubusercontent.com/paroj/language-ogre-script/master/preview2.png)
 
 ## Structure
