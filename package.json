@@ -1,11 +1,95 @@
 {
-  "name": "language-ogre-script",
-  "version": "0.5.0",
-  "description": "Syntax highlighting for Ogre Scripts for Atom",
-  "repository": "https://github.com/paroj/language-ogre-script",
-  "license": "MIT",
-  "engines": {
-    "atom": ">=0.174.0 <2.0.0"
-  },
-  "dependencies": {}
+    "name": "language-ogre-script",
+    "version": "0.6.0",
+    "publisher": "paroj",
+    "description": "Syntax highlighting for Ogre Scripts",
+    "repository": "https://github.com/paroj/language-ogre-script",
+    "license": "MIT",
+    "engines": {
+        "atom": ">=0.174.0 <2.0.0",
+        "vscode": "^1.5.0"
+    },
+    "dependencies": {},
+    "contributes": {
+        "languages": [
+            {
+                "id": "ogre-script",
+                "aliases": [
+                    "Ogre Script",
+                    "Ogre"
+                ],
+                "extensions": [
+                    ".os"
+                ]
+            },
+            {
+                "id": "ogre-material-script",
+                "aliases": [
+                    "Ogre Material Script",
+                    "Ogre"
+                ],
+                "extensions": [
+                    ".material",
+                    ".program"
+                ]
+            },
+            {
+                "id": "ogre-compositor-script",
+                "aliases": [
+                    "Ogre Compositor Script",
+                    "Ogre"
+                ],
+                "extensions": [
+                    ".compositor"
+                ]
+            },
+            {
+                "id": "ogre-overlay-script",
+                "aliases": [
+                    "Ogre Overlay Script",
+                    "Ogre"
+                ],
+                "extensions": [
+                    ".overlay"
+                ]
+            },
+            {
+                "id": "ogre-particle-script",
+                "aliases": [
+                    "Ogre Particle Script",
+                    "Ogre"
+                ],
+                "extensions": [
+                    ".particle"
+                ]
+            }
+        ],
+        "grammars": [
+            {
+                "language": "ogre-script",
+                "scopeName": "source.ogre.script",
+                "path": "./grammars/ogre-common.json"
+            },
+            {
+                "language": "ogre-material-script",
+                "scopeName": "source.ogre.material",
+                "path": "./grammars/ogre-material.json"
+            },
+            {
+                "language": "ogre-compositor-script",
+                "scopeName": "source.ogre.compositor",
+                "path": "./grammars/ogre-compositor.json"
+            },
+            {
+                "language": "ogre-overlay-script",
+                "scopeName": "source.ogre.overlay",
+                "path": "./grammars/ogre-overlay.json"
+            },
+            {
+                "language": "ogre-particle-script",
+                "scopeName": "source.ogre.particle",
+                "path": "./grammars/ogre-particle.json"
+            }
+        ]
+    }
 }

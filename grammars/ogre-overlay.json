@@ -3,7 +3,7 @@
         "overlay"
     ],
     "name": "Ogre Overlay Script",
-    "scopeName": "source.ogre.compositor",
+    "scopeName": "source.ogre.overlay",
     "patterns": [
         {
             "begin": "\\b((template )?(element|container))\\b",
