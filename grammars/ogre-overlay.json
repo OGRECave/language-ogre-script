@@ -6,7 +6,7 @@
     "scopeName": "source.ogre.overlay",
     "patterns": [
         {
-            "begin": "\\b((template )?(element|container))\\b",
+            "begin": "\\b((template )?(element|container|overlay_element|overlay))\\b",
             "beginCaptures": {
                 "1": {
                     "name": "entity.name.tag"
@@ -20,11 +20,6 @@
                     "name": "storage.type"
                 }
             ]
-        },
-        {
-            "match11": "\\b(Panel|BorderPanel|TextArea)\\b",
-            "name": "storage.type",
-            "comment": "storage type without tags"
         },
         {
             "match": "\\b(caption|font_name|alignment|char_height|space_width|colour|width|height|metrics_mode|uv_coords|horz_align|vert_align|top|left|transparent|border_(material|size|top_uv|topright_uv|topleft_uv|left_uv|right_uv|bottomleft_uv|bottom_uv|bottomright_uv)|connect_output|execution_mask|overlays|rq_(first|last)|viewport_modifier_mask|num_splits|pssm_lambda)\\b",
