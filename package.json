@@ -22,7 +22,8 @@
                 ],
                 "extensions": [
                     ".os"
-                ]
+                ],
+                "configuration": "./language-configuration.json"
             },
             {
                 "id": "ogre-material-script",
@@ -33,7 +34,8 @@
                 "extensions": [
                     ".material",
                     ".program"
-                ]
+                ],
+                "configuration": "./language-configuration.json"
             },
             {
                 "id": "ogre-compositor-script",
@@ -43,7 +45,8 @@
                 ],
                 "extensions": [
                     ".compositor"
-                ]
+                ],
+                "configuration": "./language-configuration.json"
             },
             {
                 "id": "ogre-overlay-script",
@@ -63,7 +66,8 @@
                 ],
                 "extensions": [
                     ".particle"
-                ]
+                ],
+                "configuration": "./language-configuration.json"
             }
         ],
         "grammars": [
