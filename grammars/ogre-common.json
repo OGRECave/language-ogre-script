@@ -2,6 +2,22 @@
     "scopeName": "source.ogre.script",
     "patterns": [
         {
+            "begin": "\\b(import)\\b",
+            "beginCaptures": {
+                "1": {
+                    "name": "keyword.control.import"
+                }
+            },
+            "comment": "Import statement",
+            "patterns": [
+                {
+                    "match": "\\b(from)\\b",
+                    "name": "constant.language"
+                }
+            ],
+            "end": "($|//)"
+        },
+        {
             "begin": "\\b(texture_ref)\\b",
             "beginCaptures": {
                 "1": {

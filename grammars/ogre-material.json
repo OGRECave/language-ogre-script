@@ -24,14 +24,19 @@
         },
         {
             "comment": "Keywords followed by strings",
-            "begin": "\\b(source|entry_point)\\b",
+            "begin": "\\b(source|entry_point|scheme)\\b",
             "beginCaptures": {
                 "1": {
                     "name": "entity.name.function"
                 }
             },
             "end": "($|//)",
-            "name": "string"
+            "patterns": [
+                {
+                    "match": ".*",
+                    "name": "string"
+                }
+            ]
         },
         {
             "comment": "Texture declaration",
