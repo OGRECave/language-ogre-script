@@ -167,7 +167,7 @@
             "end": "($|//)",
             "patterns": [
                 {
-                    "match": "\\b(clockwise|anticlockwise|none|back|front|none)\\b",
+                    "match": "\\b(clockwise|anticlockwise|none|back|front)\\b",
                     "name": "constant.language"
                 }
             ]
@@ -283,7 +283,7 @@
             "end": "($|//)",
             "patterns": [
                 {
-                    "match": "\\b(none|bilinear|trilinear|anisotropic)\\b",
+                    "match": "\\b(none|point|linear|bilinear|trilinear|anisotropic)\\b",
                     "name": "constant.language"
                 }
             ]
