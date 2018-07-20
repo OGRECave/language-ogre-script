@@ -2,21 +2,29 @@
 
 var vscode = require('vscode')
 
-const documentSelector = ["ogre-material-script"]
+const documentSelector = ["ogre-material-script", "ogre-compositor-script"]
 
 class SymbolProvider {
     provideDocumentSymbols(document, token) {
         var ret = new Array()
-        var re = /\b(material|(?:geometry|vertex|fragment|compute|tessellation_hull|tessellation_domain)_program)\b\s+(\S+)/
+        var re = /\b(material|(?:geometry|vertex|fragment|compute|tessellation_hull|tessellation_domain)_program)\b\s+(".*"|\S+)/
+        var classid = "material"
+
+        if(document.languageId == "ogre-compositor-script")
+        {
+            re = /\b(compositor)\b\s+(".*"|\S+)/
+            classid = "compositor"
+        }
 
         for (var i = 0; i < document.lineCount; i++) {
             var line = document.lineAt(i)
-            var match = line.text.match(re)
+            var end = line.text.indexOf("//")
+            var match = line.text.substring(0, end == -1 ? line.text.length : end).match(re)
             if (match) {
                 ret.push(new vscode.DocumentSymbol(
                     match[2],
                     match[1],
-                    match[1] == "material" ? vscode.SymbolKind.Class : vscode.SymbolKind.Object,
+                    match[1] == classid ? vscode.SymbolKind.Class : vscode.SymbolKind.Object,
                     line.range,
                     line.range
                 ))
@@ -29,11 +37,12 @@ class SymbolProvider {
 class ColorProvider {
     provideDocumentColors(document, token) {
         var ret = new Array()
-        var re = /\b(ambient|diffuse|specular|emissive)\s(.+)/
+        var re = /\b(ambient|diffuse|emissive|tex_border_colour|colour_value)\s+\b(.+)/
 
         for (var i = 0; i < document.lineCount; i++) {
             var line = document.lineAt(i)
-            var match = line.text.match(re)
+            var end = line.text.indexOf("//")
+            var match = line.text.substring(0, end == -1 ? line.text.length : end).match(re)
             if (match) {
                 var v = match[2].split(" ", 4).map(x => +x)
                 if (v.length < 3) continue // e.g. vertexcolour
@@ -51,7 +60,7 @@ class ColorProvider {
     }
 
     provideColorPresentations(c, context, token) {
-        var vals = [c.red, c.green, c.blue, c.alpha].map(x => x.toFixed(3))
+        var vals = [c.red, c.green, c.blue, c.alpha].map(x => x.toFixed(2))
         return [new vscode.ColorPresentation(vals.join(" "))]
     }
 }
