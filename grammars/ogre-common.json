@@ -73,13 +73,12 @@
             ]
         },
         {
-            "begin": "\\b(comp_func)\\b",
+            "begin": "\\b(depth_func|comp_func)\\b",
             "beginCaptures": {
                 "1": {
                     "name": "entity.name.function"
                 }
             },
-            "comment": "Comp func for stencil pass",
             "end": "($|//)",
             "patterns": [
                 {
@@ -368,13 +367,13 @@
             ]
         },
         {
-            "begin": "\\b(depth_func|alpha_rejection)\\b",
+            "begin": "\\b(alpha_rejection)\\b",
             "beginCaptures": {
                 "1": {
                     "name": "entity.name.function"
                 }
             },
-            "comment": "Depth/alpha functions for materials",
+            "comment": "alpha functions for materials",
             "end": "($|//)",
             "patterns": [
                 {
@@ -477,7 +476,7 @@
             "end": "($|//)"
         },
         {
-            "begin": "\\b(depth_check|depth_write|alpha_to_coverage|light_scissor|light_clip_planes|illumination_stage|only_initial|shadows|check|two_sided|point_sprites|point_size_attenuation|receive_shadows|colour_write|normalise_normals|lighting|transparent_sorting|transparency_casts_shadows)\\b",
+            "begin": "\\b(depth_check|compare_test|depth_write|alpha_to_coverage|light_scissor|light_clip_planes|illumination_stage|only_initial|shadows|check|two_sided|point_sprites|point_size_attenuation|receive_shadows|colour_write|normalise_normals|lighting|transparent_sorting|transparency_casts_shadows)\\b",
             "beginCaptures": {
                 "1": {
                     "name": "entity.name.function"
