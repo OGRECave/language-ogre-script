@@ -8,7 +8,7 @@
     "patterns": [
         {
             "comment": "Top Level Tag Names",
-            "begin": "\\b(hlms|material|technique|pass|clear|texture_unit|rtshader_system|(geometry|vertex|fragment|compute|tessellation_hull|tessellation_domain)_program(_ref)?|default_params|shared_params)\\b",
+            "begin": "\\b(hlms|material|technique|pass|clear|texture_unit|sampler|rtshader_system|(geometry|vertex|fragment|compute|tessellation_hull|tessellation_domain)_program(_ref)?|default_params|shared_params)\\b",
             "beginCaptures": {
                 "1": {
                     "name": "entity.name.tag"

@@ -506,7 +506,7 @@
             ]
         },
         {
-            "begin": "\\b(material_scheme|texture_alias|shadow_caster_material|shadow_receiver_material|scheme|material|compositor_logic|delegate|attach|shared_params_ref|shadow_caster_vertex_program_ref|shadow_receiver_vertex_program_ref)\\b",
+            "begin": "\\b(material_scheme|texture_alias|shadow_caster_material|shadow_receiver_material|scheme|material|compositor_logic|delegate|sampler_ref|attach|shared_params_ref|shadow_caster_vertex_program_ref|shadow_receiver_vertex_program_ref)\\b",
             "beginCaptures": {
                 "1": {
                     "name": "entity.name.function"
