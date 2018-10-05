@@ -64,7 +64,7 @@
             "end": "($|//)",
             "patterns": [
                 {
-                    "match": "\\b(Distance|PixelCount|lod_values)\\b",
+                    "match": "\\b(distance_box|distance_sphere|pixel_count|lod_values)\\b",
                     "name": "constant.language"
                 },
                 {
@@ -83,22 +83,6 @@
             "patterns": [
                 {
                     "match": "\\b(always_fail|always_pass|less|less_equal|not_equal|greater_equal|greater)\\b",
-                    "name": "constant.language"
-                }
-            ]
-        },
-        {
-            "begin": "\\b(fail_op|depth_fail_op|pass_op)\\b",
-            "beginCaptures": {
-                "1": {
-                    "name": "entity.name.function"
-                }
-            },
-            "comment": "Operations for stencil pass",
-            "end": "($|//)",
-            "patterns": [
-                {
-                    "match": "\\b(keep|zero|replace|increment|decrement|increment_wrap|decrement_wrap|invert)\\b",
                     "name": "constant.language"
                 }
             ]
@@ -298,7 +282,7 @@
             "end": "($|//)",
             "patterns": [
                 {
-                    "match": "\\b(replace|blend_diffuse_alpha|blend_texture_alpha|blend_current_alpha|blend_manual|dotproduct|blend_diffuse_colour|src_current|src_texture|src_diffuse|src_specular|src_manual|add|add_signed|add_smooth|subtract|modulate|modulate_x2|modulate_x4|alpha_blend|source1|source2|)\\b",
+                    "match": "\\b(replace|blend_diffuse_alpha|blend_texture_alpha|blend_current_alpha|blend_manual|dotproduct|blend_diffuse_colour|src_current|src_texture|src_diffuse|src_specular|src_manual|add|add_signed|add_smooth|subtract|modulate|modulate_x2|modulate_x4|alpha_blend|source1|source2)\\b",
                     "name": "constant.language"
                 },
                 {
@@ -506,7 +490,7 @@
             ]
         },
         {
-            "begin": "\\b(material_scheme|texture_alias|shadow_caster_material|shadow_receiver_material|scheme|material|compositor_logic|delegate|sampler_ref|attach|shared_params_ref|shadow_caster_vertex_program_ref|shadow_receiver_vertex_program_ref)\\b",
+            "begin": "\\b(material_scheme|texture_alias|shadow_(caster|receiver)_material|scheme|material|compositor_logic|delegate|sampler_ref|attach|shared_params_ref)\\b",
             "beginCaptures": {
                 "1": {
                     "name": "entity.name.function"

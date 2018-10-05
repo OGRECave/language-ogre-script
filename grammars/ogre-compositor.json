@@ -16,7 +16,7 @@
             "end": "($|//|{)",
             "patterns": [
                 {
-                    "match": "\\b(render_scene|render_quad|clear|stencil|render_custom)\\b",
+                    "match": "\\b(render_scene|render_quad|clear|stencil|render_custom|compute)\\b",
                     "name": "storage.type"
                 }
             ]
@@ -49,6 +49,11 @@
             ]
         },
         {
+            "comment": "compute dimensions",
+            "match": "\\bthread_groups\\b",
+            "name": "entity.name.function"
+        },
+        {
             "begin": "\\b(input)\\b",
             "beginCaptures": {
                 "1": {
@@ -64,6 +69,22 @@
                 },
                 {
                     "include": "source.ogre.script#numeric"
+                }
+            ]
+        },
+        {
+            "begin": "\\b(fail_op|depth_fail_op|pass_op)\\b",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function"
+                }
+            },
+            "comment": "Operations for stencil pass",
+            "end": "($|//)",
+            "patterns": [
+                {
+                    "match": "\\b(keep|zero|replace|increment|decrement|increment_wrap|decrement_wrap|invert)\\b",
+                    "name": "constant.language"
                 }
             ]
         },
