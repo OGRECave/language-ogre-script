@@ -18,6 +18,10 @@
             "end": "($|//)"
         },
         {
+            "match": "\\b(abstract)\\b",
+            "name": "entity.name.tag"
+        },
+        {
             "begin": "\\b(texture_ref)\\b",
             "beginCaptures": {
                 "1": {
