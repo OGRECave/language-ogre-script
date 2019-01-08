@@ -22,13 +22,28 @@
             ]
         },
         {
-            "match": "\\b(caption|font_name|alignment|char_height|space_width|colour|width|height|metrics_mode|uv_coords|horz_align|vert_align|top|left|transparent|border_(material|size|top_uv|topright_uv|topleft_uv|left_uv|right_uv|bottomleft_uv|bottom_uv|bottomright_uv)|connect_output|execution_mask|overlays|rq_(first|last)|viewport_modifier_mask|num_splits|pssm_lambda)\\b",
+            "match": "\\b(zorder|font_name|alignment|char_height|space_width|colour(_top|_bottom)?|width|height|metrics_mode|uv_coords|horz_align|vert_align|top|left|transparent|border_(material|size|top_uv|topright_uv|topleft_uv|left_uv|right_uv|bottomleft_uv|bottom_uv|bottomright_uv)|connect_output|execution_mask|overlays|rq_(first|last)|viewport_modifier_mask|num_splits|pssm_lambda)\\b",
             "name": "entity.name.function",
             "comment": "general properties"
         },
         {
             "match": "\\b(pixels|center|right|left|bottom|top)\\b",
             "name": "constant.language"
+        },
+        {
+            "begin": "\\b(caption)\\b",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function"
+                }
+            },
+            "end": "($|//)",
+            "patterns": [
+                {
+                    "match": ".*",
+                    "name": "string"
+                }
+            ]
         },
         {
             "include": "source.ogre.script"
