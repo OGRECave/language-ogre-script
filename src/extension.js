@@ -65,6 +65,37 @@ class ColorProvider {
     }
 }
 
+const deprecations = {
+    "lod_distances": "lod_values",
+    "cubic_texture": "texture <basename> cubic",
+    "separateUV": "use hardware cubic textures"
+}
+
+function validate(editor, diagnostics) {
+    if (!editor) {
+        return
+    }
+    var result = new Array()
+    for (var i = 0; i < editor.document.lineCount; i++) {
+        var line = editor.document.lineAt(i)
+        var end = line.text.indexOf("//")
+        line = line.text.substring(0, end == -1 ? line.text.length : end)
+
+        for (var [sym, rep] of Object.entries(deprecations)) {
+            var pos = 0
+            while ((pos = line.indexOf(sym, pos)) >= 0) {
+                var len = sym.length
+                var diag = new vscode.Diagnostic(new vscode.Range(i, pos, i, pos + len), `This is deprecated, use "${rep}" instead.`)
+                diag.severity = vscode.DiagnosticSeverity.Warning
+                diag.tags = [vscode.DiagnosticTag.Deprecated]
+                result.push(diag)
+                pos += len
+            }
+        }
+    }
+    diagnostics.set(editor.document.uri, result)
+}
+
 function activate(ctx) {
     ctx.subscriptions.push(
         vscode.languages.registerDocumentSymbolProvider(
@@ -72,6 +103,14 @@ function activate(ctx) {
     ctx.subscriptions.push(
         vscode.languages.registerColorProvider(
             documentSelector, new ColorProvider()))
+
+    var diagnostics = vscode.languages.createDiagnosticCollection('Deprecations')
+    if (vscode.window.activeTextEditor) {
+        validate(vscode.window.activeTextEditor, diagnostics)
+    }
+    ctx.subscriptions.push(vscode.window.onDidChangeActiveTextEditor(editor => {
+        validate(editor, diagnostics)
+    }))
 }
 
 Object.defineProperty(exports, "__esModule", { value: true })
