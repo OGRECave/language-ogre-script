@@ -22,12 +22,37 @@
             ]
         },
         {
-            "match": "\\b(colour|particle_width|particle_height|sorted|cull_each|quota|billboard_type|rate|emission_rate|angle|position|direction|renderer|local_space)\\b",
+            "match": "\\b(quota|particle_(width|height)|sorted|cull_each|billboard_(origin|rotation_type)|renderer|local_space|point_rendering|common_(direction|up_vector))\\b",
+            "name": "entity.name.function",
+            "comment": "particle system attributes"
+        },
+        {
+            "begin": "\\b(billboard_type)\\b",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function"
+                }
+            },
+            "end": "($|//)",
+            "patterns": [
+                {
+                    "match": "\\b(point|(oriented|perpendicular)_(self|common))\\b",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        {
+            "match": "\\b(colour|rate|emission_rate|angle|position|direction)\\b",
             "name": "entity.name.function",
             "comment": "general properties"
         },
         {
-            "match": "\\b(red|green|blue|alpha|width|height|depth)\\b",
+            "match": "\\b(force_(application|vector)|state_change|randomness|bounce|plane_(normal|point)|image)\\b",
+            "name": "entity.name.function",
+            "comment": "affector properties"
+        },
+        {
+            "match": "\\b((red|green|blue|alpha)(1|2)?|width|height|depth)\\b",
             "name": "entity.name.function",
             "comment": "Dimensions"
         },
