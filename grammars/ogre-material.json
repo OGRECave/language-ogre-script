@@ -113,7 +113,7 @@
         },
         {
             "comment": "rtshader properties",
-            "match": "\\b(lighting_stage|light_count|triplanarTexturing|integrated_pssm4|layered_blend|source_modifier)\\b",
+            "match": "\\b(lighting_stage|light_count|triplanarTexturing|integrated_pssm4|layered_blend|source_modifier|hardware_skinning)\\b",
             "name": "entity.name.function"
         },
         {
