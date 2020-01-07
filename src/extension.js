@@ -68,7 +68,10 @@ class ColorProvider {
 const deprecations = {
     "lod_distances": "lod_values",
     "cubic_texture": "texture <basename> cubic",
-    "separateUV": "use hardware cubic textures"
+    "separateUV": "hardware cubic textures",
+    "attach": "#include <filename.glsl>",
+    "set_texture_alias": "set $variable value",
+    " texture_alias": "texture $variable"
 }
 
 function validate(editor, diagnostics) {

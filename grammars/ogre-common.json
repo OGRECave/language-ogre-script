@@ -22,6 +22,10 @@
             "name": "entity.name.tag"
         },
         {
+            "match": "\\b(set)\\b",
+            "name": "entity.name.function"
+        },
+        {
             "begin": "\\b(texture_ref)\\b",
             "beginCaptures": {
                 "1": {
@@ -32,10 +36,13 @@
             "end": "($|//)"
         },
         {
-            "begin": "\\b(set_texture_alias)\\b",
+            "begin": "\\b((?:set_)?texture_alias)\\b\\s*(\\S+)\\b",
             "beginCaptures": {
                 "1": {
                     "name": "entity.name.function"
+                },
+                "2": {
+                    "name": "variable.other"
                 }
             },
             "comment": "Texture Alias for materials",
@@ -513,7 +520,7 @@
             ]
         },
         {
-            "begin": "\\b(material_scheme|texture_alias|shadow_(caster|receiver)_material|scheme|material|compositor_logic|delegate|sampler_ref|attach|shared_params_ref)\\b",
+            "begin": "\\b(material_scheme|shadow_(caster|receiver)_material|scheme|material|compositor_logic|delegate|sampler_ref|attach|shared_params_ref)\\b",
             "beginCaptures": {
                 "1": {
                     "name": "entity.name.function"
@@ -547,12 +554,19 @@
             "include": "#boolean"
         },
         {
-            "comment": "Ogre Variable. Taken from PHP",
-            "match": "(?x)\n        \t\t\t            (\\$+)[a-zA-Z_\\x{7f}-\\x{ff}]\n        \t\t\t            [a-zA-Z0-9_\\x{7f}-\\x{ff}]*?\\b",
-            "name": "variable.other"
+            "include": "#variable"
         }
     ],
     "repository": {
+        "variable": {
+            "comment": "Ogre Variable. Taken from PHP",
+            "patterns": [
+                {
+                    "match": "(?x)\n        \t\t\t            (\\$+)[a-zA-Z_\\x{7f}-\\x{ff}]\n        \t\t\t            [a-zA-Z0-9_\\x{7f}-\\x{ff}]*?\\b",
+                    "name": "variable.other"
+                }
+            ]
+        },
         "numeric": {
             "patterns": [
                 {

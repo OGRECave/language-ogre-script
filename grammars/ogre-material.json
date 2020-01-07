@@ -56,6 +56,9 @@
                     "include": "source.ogre.script#pixelformat"
                 },
                 {
+                    "include": "source.ogre.script#variable"
+                },
+                {
                     "match": "\\S+",
                     "name": "string"
                 }
