@@ -75,7 +75,7 @@ const deprecations = {
 }
 
 function validate(editor, diagnostics) {
-    if (!editor) {
+    if (!editor || !documentSelector.includes(editor.document.languageId)) {
         return
     }
     var result = new Array()

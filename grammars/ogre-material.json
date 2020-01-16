@@ -17,7 +17,7 @@
             "end": "($|//|{)",
             "patterns": [
                 {
-                    "match": "\\b(pbs|hlsl|glsl|glsles|cg|unified)\\b",
+                    "match": "\\b(pbs|hlsl|glsl|glsles|cg|unified|spirv)\\b",
                     "name": "storage.type"
                 }
             ]
@@ -116,8 +116,25 @@
         },
         {
             "comment": "rtshader properties",
-            "match": "\\b(lighting_stage|light_count|triplanarTexturing|integrated_pssm4|layered_blend|source_modifier|hardware_skinning)\\b",
-            "name": "entity.name.function"
+            "begin": "\\b(transform_stage|lighting_stage|light_count|triplanarTexturing|integrated_pssm4|layered_blend|source_modifier|hardware_skinning)\\b",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function"
+                }
+            },
+            "end": "($|//)",
+            "patterns": [
+                {
+                    "match": "\\b(instanced|linear|dual_quaternion|ffp|per_(pixel|vertex))\\b",
+                    "name": "constant.language"
+                },
+                {
+                    "include": "source.ogre.script#boolean"
+                },
+                {
+                    "include": "source.ogre.script#numeric"
+                }
+            ]
         },
         {
             "comment": "v2.1 properties",
