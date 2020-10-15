@@ -16,7 +16,7 @@
             "end": "($|//|{)",
             "patterns": [
                 {
-                    "match": "\\b(Point|Box|Rotator|Scaler|ColourImage|ColourFader|LinearForce|DeflectorPlane|DirectionRandomiser)\\b",
+                    "match": "\\b(Point|Box|Rotator|Scaler|ColourInterpolator|ColourImage|ColourFader2?|LinearForce|DeflectorPlane|DirectionRandomiser)\\b",
                     "name": "storage.type"
                 }
             ]
