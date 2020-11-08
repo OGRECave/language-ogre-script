@@ -22,7 +22,7 @@
             ]
         },
         {
-            "match": "\\b(quota|particle_(width|height)|sorted|cull_each|billboard_(origin|rotation_type)|renderer|local_space|point_rendering|common_(direction|up_vector))\\b",
+            "match": "\\b((emit_emitter_)?quota|particle_(width|height)|sorted|cull_each|billboard_(origin|rotation_type)|renderer|local_space|point_rendering|common_(direction|up_vector))\\b",
             "name": "entity.name.function",
             "comment": "particle system attributes"
         },
@@ -42,7 +42,7 @@
             ]
         },
         {
-            "match": "\\b(colour|rate|emission_rate|angle|position|direction)\\b",
+            "match": "\\b(colour|rate|emission_rate|angle|position|direction|emit_emitter)\\b",
             "name": "entity.name.function",
             "comment": "general properties"
         },

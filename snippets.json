@@ -1,0 +1,38 @@
+{
+    "Declare material": {
+        "prefix": "material",
+        "body": [
+            "material ${1:Name}\n{",
+            "\ttechnique\n\t{",
+            "\t\tpass\n\t\t{",
+            "\t\t\t$2",
+            "\t\t}",
+            "\t}",
+            "}"
+        ]
+    },
+    "Declare GPU Program": {
+        "prefix": "program",
+        "body": [
+            "${1|vertex_program,fragment_program,geometry_program,compute_program,tessellation_hull_program,tessellation_domain_program|} ${2:Name} ${3|glsl,hlsl,glsles,spirv,unified,metal|}\n{",
+            "\tsource $4",
+            "}"
+        ]
+    },
+    "Declare compositor": {
+        "prefix": "compositor",
+        "body": [
+            "compositor ${1:Name}\n{",
+            "\ttechnique\n\t{",
+            "\t\ttexture ${2:TargetName} target_width target_height PF_BYTE_RGBA",
+            "\t\ttarget $2\n\t\t{",
+            "\t\t\tinput previous",
+            "\t\t}",
+            "\t\ttarget_output\n\t\t{",
+            "\t\t\t$3",
+            "\t\t}",
+            "\t}",
+            "}"
+        ]
+    }
+}
