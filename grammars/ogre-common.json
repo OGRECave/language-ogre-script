@@ -555,6 +555,9 @@
         },
         {
             "include": "#variable"
+        },
+        {
+            "include": "#string-double-quoted"
         }
     ],
     "repository": {
@@ -658,6 +661,21 @@
                     ]
                 }
             ]
-        }
+        },
+        "string-double-quoted": {
+			"begin": "\"",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.begin.php"
+				}
+			},
+			"end": "\"",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.end.php"
+				}
+			},
+			"name": "string"
+		}
     }
 }

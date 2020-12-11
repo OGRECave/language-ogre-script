@@ -1,0 +1,21 @@
+{
+    "fileTypes": [
+        "fontdef"
+    ],
+    "name": "Ogre Font Definition Script",
+    "scopeName": "source.ogre.fontdef",
+    "patterns": [
+        {
+            "match": "\\b(type|size|resolution|glyph|code_points)\\b",
+            "name": "entity.name.function",
+            "comment": "font attributes"
+        },
+        {
+            "match": "\\b(font)\\b",
+            "name": "entity.name.tag"
+        },
+        {
+            "include": "source.ogre.script"
+        }
+    ]
+}

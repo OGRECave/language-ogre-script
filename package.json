@@ -2,7 +2,7 @@
     "name": "language-ogre-script",
     "displayName": "Syntax highlighting for Ogre Scripts",
     "icon": "icon.png",
-    "version": "0.9.0",
+    "version": "0.9.1",
     "publisher": "paroj",
     "description": "supports Material, Compositor, Overlay and Particle scripts",
     "repository": "https://github.com/paroj/language-ogre-script",
@@ -73,6 +73,17 @@
                     ".particle"
                 ],
                 "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "ogre-fontdef-script",
+                "aliases": [
+                    "Ogre Definition Script",
+                    "Ogre"
+                ],
+                "extensions": [
+                    ".fontdef"
+                ],
+                "configuration": "./language-configuration.json"
             }
         ],
         "grammars": [
@@ -100,6 +111,11 @@
                 "language": "ogre-particle-script",
                 "scopeName": "source.ogre.particle",
                 "path": "./grammars/ogre-particle.json"
+            },
+            {
+                "language": "ogre-fontdef-script",
+                "scopeName": "source.ogre.fontdef",
+                "path": "./grammars/ogre-fontdef.json"
             }
         ],
         "snippets": [
