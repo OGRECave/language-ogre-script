@@ -37,7 +37,7 @@
             "end": "($|//)",
             "patterns": [
                 {
-                    "match": "\\b(pooled|target_width|target_height|target_width_scaled|target_height_scaled|gamma|no_fsaa|depth_pool|light|split|local_scope|chain_scope|global_scope)\\b",
+                    "match": "\\b(pooled|target_(width|height)(_scaled)?|cubic|gamma|no_fsaa|depth_pool|light|split|(local|chain|global)_scope)\\b",
                     "name": "constant.language"
                 },
                 {
@@ -52,6 +52,39 @@
             "comment": "compute dimensions",
             "match": "\\bthread_groups\\b",
             "name": "entity.name.function"
+        },
+        {
+            "begin": "\\b(camera)\\b",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function"
+                }
+            },
+            "end": "($|//)",
+            "patterns": [
+                {
+                    "match": "\\balign_to_face\\b",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        {
+            "begin": "\\b(colour_value)\\b",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function"
+                }
+            },
+            "end": "($|//)",
+            "patterns": [
+                {
+                    "match": "\\bauto\\b",
+                    "name": "constant.language"
+                },
+                {
+                    "include": "source.ogre.script#numeric"
+                }
+            ]
         },
         {
             "begin": "\\b(input)\\b",

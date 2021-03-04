@@ -71,7 +71,11 @@ const deprecations = {
     "separateUV": "hardware cubic textures",
     "attach": "#include <filename.glsl>",
     "set_texture_alias": "set $variable value",
-    " texture_alias": "texture $variable"
+    " texture_alias": "texture $variable",
+    "shadow_receiver_vertex_program_ref": "shadow_receiver_material",
+    "shadow_receiver_fragment_program_ref": "shadow_receiver_material",
+    "shadow_caster_vertex_program_ref": "shadow_caster_material",
+    "shadow_caster_fragment_program_ref": "shadow_caster_material"
 }
 
 function validate(editor, diagnostics) {

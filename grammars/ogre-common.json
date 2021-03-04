@@ -541,7 +541,7 @@
             "name": "string"
         },
         {
-            "match": "\\b(lod_index|point_size|depth_bias|iteration_depth_bias|first_render_queue|last_render_queue|visibility_mask|anim_texture|point_size_min|point_size_max|lod_bias|identifier|start_light|max_lights|colour_value|depth_value|stencil_value|ref_value|mask|tex_coord_set|tex_border_colour|max_anisotropy|mipmap_bias|scroll|scroll_anim|rotate|rotate_anim|scale|transform|preprocessor_defines|includes_pose_animation)\\b",
+            "match": "\\b(lod_index|point_size|depth_bias|iteration_depth_bias|first_render_queue|last_render_queue|visibility_mask|anim_texture|point_size_min|point_size_max|lod_bias|identifier|start_light|max_lights|depth_value|stencil_value|ref_value|mask|tex_coord_set|tex_border_colour|max_anisotropy|mipmap_bias|scroll|scroll_anim|rotate|rotate_anim|scale|transform|preprocessor_defines|includes_pose_animation)\\b",
             "name": "entity.name.function"
         },
         {
