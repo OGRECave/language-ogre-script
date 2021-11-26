@@ -42,7 +42,7 @@
             ]
         },
         {
-            "match": "\\b(colour|rate|emission_rate|angle|position|direction|emit_emitter)\\b",
+            "match": "\\b(colour|rate|emission_rate|angle|position|direction|emit_emitter|name)\\b",
             "name": "entity.name.function",
             "comment": "general properties"
         },

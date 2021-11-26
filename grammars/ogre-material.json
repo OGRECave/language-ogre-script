@@ -17,7 +17,7 @@
             "end": "($|//|{)",
             "patterns": [
                 {
-                    "match": "\\b(pbs|hlsl|glsl|glsles|cg|unified|spirv)\\b",
+                    "match": "\\b(pbs|hlsl|glsl|glsles|cg|unified|spirv|glslang)\\b",
                     "name": "storage.type"
                 }
             ]
