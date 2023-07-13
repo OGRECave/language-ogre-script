@@ -75,7 +75,11 @@ const deprecations = {
     "shadow_receiver_vertex_program_ref": "shadow_receiver_material",
     "shadow_receiver_fragment_program_ref": "shadow_receiver_material",
     "shadow_caster_vertex_program_ref": "shadow_caster_material",
-    "shadow_caster_fragment_program_ref": "shadow_caster_material"
+    "shadow_caster_fragment_program_ref": "shadow_caster_material",
+    "Distance": "distance_box",
+    "PixelCount": "pixel_count",
+    "compare_func": "comp_func",
+    "bool": "uint"
 }
 
 function validate(editor, diagnostics) {
@@ -92,7 +96,7 @@ function validate(editor, diagnostics) {
             var pos = 0
             while ((pos = line.indexOf(sym, pos)) >= 0) {
                 var len = sym.length
-                var diag = new vscode.Diagnostic(new vscode.Range(i, pos, i, pos + len), `This is deprecated, use "${rep}" instead.`)
+                var diag = new vscode.Diagnostic(new vscode.Range(i, pos, i, pos + len), `"${sym}" is deprecated, use "${rep}" instead.`)
                 diag.severity = vscode.DiagnosticSeverity.Warning
                 diag.tags = [vscode.DiagnosticTag.Deprecated]
                 result.push(diag)
