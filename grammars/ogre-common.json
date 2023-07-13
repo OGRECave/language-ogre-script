@@ -75,9 +75,24 @@
             "end": "($|//)",
             "patterns": [
                 {
-                    "match": "\\b(distance_box|distance_sphere|pixel_count|lod_values)\\b",
+                    "match": "\\b(distance_(box|sphere)|(screen_ratio_)?pixel_count)\\b",
                     "name": "constant.language"
                 },
+                {
+                    "include": "#numeric"
+                }
+            ]
+        },
+        {
+            "begin": "\\b(lod_values)\\b",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function"
+                }
+            },
+            "comment": "Lod values in materials",
+            "end": "($|//)",
+            "patterns": [
                 {
                     "include": "#numeric"
                 }
@@ -302,24 +317,40 @@
             ]
         },
         {
-            "begin": "\\b(param_indexed|param_indexed_auto|param_named|param_named_auto|shared_param_named)\\b",
+            "begin": "\\b(param_indexed|param_named|shared_param_named)\\b",
             "beginCaptures": {
                 "1": {
                     "name": "entity.name.function"
                 }
             },
-            "comment": "Shader program indexed/named/auto parameters",
+            "comment": "Shader program indexed/named parameters",
             "end": "($|//)",
             "patterns": [
                 {
-                    "match": "\\b(float[0-9]*|int[0-9]*|matrix[0-9]x[0-9]|bool|uint|(inverse_)?(transpose_)?(world|view|projection|worldview|viewproj|worldviewproj|texture)_matrix|world_matrix_array_3x4|world_dualquaternion_array_2x4|normal_matrix|render_target_flipping|light_diffuse_colour|light_specular_colour|light_attenuation|spotlight_params|light_position|light_direction|light_position_object_space|light_direction_object_space|light_distance_object_space|light_position_view_space|light_direction_view_space|light_power|light_diffuse_colour_power_scaled|light_specular_colour_power_scaled|light_number|light_diffuse_colour_array|light_specular_colour_array|light_diffuse_colour_power_scaled_array|light_specular_colour_power_scaled_array|light_attenuation_array|spotlight_params_array|light_position_array|light_direction_array|light_position_object_space_array|light_direction_object_space_array|light_distance_object_space_array|light_position_view_space_array|light_direction_view_space_array|light_power_array|light_count|light_casts_shadows|ambient_light_colour|surface_ambient_colour|surface_diffuse_colour|surface_specular_colour|surface_emissive_colour|surface_shininess|derived_ambient_light_colour|derived_scene_colour|derived_light_diffuse_colour|derived_light_specular_colour|derived_light_diffuse_colour_array|derived_light_specular_colour_array|fog_colour|fog_params|camera_position|camera_position_object_space|lod_camera_position|lod_camera_position_object_space|(frame_)?time|(sin|cos|tan)?time_0_(x|1|2pi)|time_0_(x|1|2pi)_packed|fps|(inverse_)?viewport_(width|height)|viewport_size|texel_offsets|view_direction|view_side_vector|view_up_vector|fov|(near|far)_clip_distance|texture_(world)?viewproj_matrix(_array)?|spotlight_(world)?viewproj_matrix|scene_depth_range|shadow_scene_depth_range|shadow_colour|shadow_extrusion_distance|texture_size|inverse_texture_size|packed_texture_size|pass_number|pass_iteration_number|animation_parametric|custom)\\b",
+                    "match": "\\b(float[0-9]*|u?int[0-9]*|matrix[2-4]x[2-4])\\b",
                     "name": "storage.type"
                 },
                 {
                     "include": "#numeric"
+                }
+            ]
+        },
+        {
+            "begin": "\\b(param_indexed_auto|param_named_auto)\\b",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function"
+                }
+            },
+            "comment": "Shader program indexed/named auto parameters",
+            "end": "($|//)",
+            "patterns": [
+                {
+                    "match": "\\b((inverse_)?(transpose_)?(world|view|projection|worldview|viewproj|worldviewproj|texture)_matrix|(world|bone)_matrix_array_3x4|(world|bone)_dualquaternion_array_2x4|normal_matrix|render_target_flipping|light_(diffuse|specular)_colour(_power_scaled)?(_array)?|light_attenuation|spotlight_params|light_(position|direction)(_object_space|_view_space)?(_array)?|light_distance_object_space|light_power|light_number|light_attenuation_array|spotlight_params_array|light_distance_object_space_array|light_power_array|light_count|light_casts_shadows|ambient_light_colour|surface_(ambient|diffuse|specular|emissive)_colour|surface_shininess|surface_alpha_rejection_value|derived_ambient_light_colour|derived_scene_colour|derived_light_(diffuse|specular)_colour(_array)?|fog_colour|fog_params|(lod_)?camera_position(_object_space)?|(frame_)?time|(sin|cos|tan)?time_0_(x|1|2pi)|time_0_(x|1|2pi)_packed|fps|(inverse_)?viewport_(width|height)|viewport_size|texel_offsets|view_direction|view_side_vector|view_up_vector|fov|(near|far)_clip_distance|texture_(world)?viewproj_matrix(_array)?|spotlight_(world)?viewproj_matrix|scene_depth_range|shadow_scene_depth_range|shadow_colour|shadow_extrusion_distance|(inverse_|packed_)?texture_size|pass_number|pass_iteration_number|animation_parametric|(light_)?custom|point_params|material_lod_index)\\b",
+                    "name": "storage.type"
                 },
                 {
-                    "include": "#boolean"
+                    "include": "#numeric"
                 }
             ]
         },
@@ -505,7 +536,7 @@
             ]
         },
         {
-            "begin": "\\b(polygon_mode_overrideable|includes_skeletal_animation|includes_morph_animation|uses_vertex_texture_fetch|uses_adjacency_information|column_major_matrices)\\b",
+            "begin": "\\b(polygon_mode_overrideable|includes_instancing|includes_skeletal_animation|includes_morph_animation|uses_vertex_texture_fetch|uses_adjacency_information|column_major_matrices)\\b",
             "beginCaptures": {
                 "1": {
                     "name": "entity.name.function"
