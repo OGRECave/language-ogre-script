@@ -2,7 +2,7 @@
     "name": "language-ogre-script",
     "displayName": "Syntax highlighting for Ogre Scripts",
     "icon": "icon.png",
-    "version": "0.9.2",
+    "version": "0.9.4",
     "publisher": "paroj",
     "description": "supports Material, Compositor, Overlay and Particle scripts",
     "repository": "https://github.com/paroj/language-ogre-script",
@@ -15,6 +15,9 @@
         "atom": ">=0.174.0 <2.0.0",
         "vscode": "^1.5.0"
     },
+    "sponsor": {
+        "url": "https://www.patreon.com/ogre1"
+    },    
     "dependencies": {},
     "contributes": {
         "languages": [
