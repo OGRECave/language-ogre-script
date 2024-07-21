@@ -2,10 +2,10 @@
     "name": "language-ogre-script",
     "displayName": "Syntax highlighting for Ogre Scripts",
     "icon": "icon.png",
-    "version": "0.9.4",
+    "version": "0.9.5",
     "publisher": "paroj",
     "description": "supports Material, Compositor, Overlay and Particle scripts",
-    "repository": "https://github.com/paroj/language-ogre-script",
+    "repository": "https://github.com/OGRECave/language-ogre-script",
     "license": "MIT",
     "main": "./src/extension",
     "activationEvents": [

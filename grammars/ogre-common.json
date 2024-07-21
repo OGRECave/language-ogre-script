@@ -521,7 +521,7 @@
             "end": "($|//)"
         },
         {
-            "begin": "\\b(depth_check|compare_test|depth_write|alpha_to_coverage|light_scissor|light_clip_planes|only_initial|shadows|check|two_sided|point_sprites|point_size_attenuation|receive_shadows|colour_write|normalise_normals|lighting|transparent_sorting|transparency_casts_shadows)\\b",
+            "begin": "\\b(depth_check|compare_test|depth_write|alpha_to_coverage|light_scissor|light_clip_planes|only_initial|shadows|check|two_sided|point_sprites|point_size_attenuation|receive_shadows|colour_write|lighting|transparent_sorting|transparency_casts_shadows)\\b",
             "beginCaptures": {
                 "1": {
                     "name": "entity.name.function"

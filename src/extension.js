@@ -79,7 +79,8 @@ const deprecations = {
     "Distance": "distance_box",
     "PixelCount": "pixel_count",
     "compare_func": "comp_func",
-    "bool": "uint"
+    "bool": "uint",
+    "normalise_normals": "shaders"
 }
 
 function validate(editor, diagnostics) {
