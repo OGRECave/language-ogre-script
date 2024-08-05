@@ -7,7 +7,7 @@ const documentSelector = ["ogre-material-script", "ogre-compositor-script"]
 class SymbolProvider {
     provideDocumentSymbols(document, token) {
         var ret = new Array()
-        var re = /\b(material|(?:geometry|vertex|fragment|compute|tessellation_hull|tessellation_domain)_program)\b\s+(".*"|\S+)/
+        var re = /\b(material|(?:geometry|vertex|fragment|compute|tessellation_hull|tessellation_domain|mesh|task)_program)\b\s+(".*"|\S+)/
         var classid = "material"
 
         if(document.languageId == "ogre-compositor-script")
