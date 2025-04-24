@@ -37,7 +37,7 @@
             "end": "($|//)",
             "patterns": [
                 {
-                    "match": "\\b(pooled|target_(width|height)(_scaled)?|cubic|gamma|no_fsaa|depth_pool|light|split|(local|chain|global)_scope)\\b",
+                    "match": "\\b(pooled|target_(width|height)(_scaled)?|cubic|2d_array|gamma|(no_)?fsaa|depth_pool|light|split|(local|chain|global)_scope)\\b",
                     "name": "constant.language"
                 },
                 {
