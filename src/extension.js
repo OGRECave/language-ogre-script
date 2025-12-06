@@ -76,8 +76,8 @@ const deprecations = {
     "shadow_receiver_fragment_program_ref": "shadow_receiver_material",
     "shadow_caster_vertex_program_ref": "shadow_caster_material",
     "shadow_caster_fragment_program_ref": "shadow_caster_material",
-    "Distance": "distance_box",
-    "PixelCount": "pixel_count",
+    " Distance": "distance_box",
+    " PixelCount": "pixel_count",
     "compare_func": "comp_func",
     "bool": "uint",
     "normalise_normals": "shaders"
